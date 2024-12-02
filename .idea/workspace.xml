@@ -8,13 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day_2/files/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_2/files/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_2/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_2/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advent_of_rust_2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/advent_of_rust_2024.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day_1/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_1/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733153639390</updated>
       <workItem from="1733153640374" duration="44000" />
-      <workItem from="1733153701624" duration="9763000" />
+      <workItem from="1733153701624" duration="10475000" />
     </task>
     <servers />
   </component>
