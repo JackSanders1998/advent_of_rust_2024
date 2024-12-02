@@ -1,2 +1,3 @@
-mod part_1;
-mod part_2;
+mod main;
+
+pub use main::*;
