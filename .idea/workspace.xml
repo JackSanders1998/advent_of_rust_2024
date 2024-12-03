@@ -10,6 +10,9 @@
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day_1/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_1/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day_2/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_2/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +35,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cargo.Test day_2::main::tests::part_1_input_file.executor": "Run",
     "Cargo.Test day_2::main::tests::part_2_input_file.executor": "Run",
     "Cargo.Test day_2::main::tests::part_2_test_file.executor": "Run",
     "Cargo.Test day_2::main::tests::test_real_file.executor": "Run",
     "Cargo.Test day_2::main::tests::test_sample_file.executor": "Run",
+    "Cargo.Test main.executor": "Run",
     "Cargo.Test main::tests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
@@ -59,7 +64,24 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test main::tests">
+  <component name="RunManager" selected="Cargo.Test main">
+    <configuration name="Test day_2::main::tests::part_1_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_2::main::tests::part_1_input_file -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test day_2::main::tests::part_2_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_2::main::tests::part_2_input_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -94,25 +116,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test day_2::main::tests::test_real_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_2::main::tests::test_real_file -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test day_2::main::tests::test_sample_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_2::main::tests::test_sample_file -- --exact" />
+    <configuration name="Test main" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_2::main" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -145,29 +150,13 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="command" value="run" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test main" />
         <item itemvalue="Cargo.Test main::tests" />
         <item itemvalue="Cargo.Test day_2::main::tests::part_2_input_file" />
+        <item itemvalue="Cargo.Test day_2::main::tests::part_1_input_file" />
         <item itemvalue="Cargo.Test day_2::main::tests::part_2_test_file" />
-        <item itemvalue="Cargo.Test day_2::main::tests::test_real_file" />
-        <item itemvalue="Cargo.Test day_2::main::tests::test_sample_file" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +180,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733153639390</updated>
       <workItem from="1733153640374" duration="44000" />
-      <workItem from="1733153701624" duration="10677000" />
+      <workItem from="1733153701624" duration="17030000" />
+      <workItem from="1733180284540" duration="2804000" />
     </task>
     <servers />
   </component>

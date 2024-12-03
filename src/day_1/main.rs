@@ -1,19 +1,17 @@
 use crate::utils::read_lines;
 
-fn helper(file: &str) -> (Vec<i32>, Vec<i32>) {
+fn parse_file_columns_as_vectors(file: &str) -> (Vec<i32>, Vec<i32>) {
     let mut v1 = Vec::new();
     let mut v2 = Vec::new();
 
-    if let Ok(lines) = read_lines(file) {
-        for line in lines.flatten() {
-            let first = line.split_whitespace().next();
-            let last = line.split_whitespace().clone().last();
-            if first.is_some() {
-                v1.push(first.unwrap().parse::<i32>().unwrap());
-            }
-            if last.is_some() {
-                v2.push(last.unwrap().parse::<i32>().unwrap());
-            }
+    for line in read_lines(file).flatten() {
+        let first = line.split_whitespace().next();
+        let last = line.split_whitespace().clone().last();
+        if first.is_some() {
+            v1.push(first.unwrap().parse::<i32>().unwrap());
+        }
+        if last.is_some() {
+            v2.push(last.unwrap().parse::<i32>().unwrap());
         }
     }
     (v1, v2)
@@ -22,7 +20,7 @@ fn helper(file: &str) -> (Vec<i32>, Vec<i32>) {
 pub fn part_1(file: &str) -> i32 {
     let mut diff_sum: i32 = 0;
 
-    let (mut v1, mut v2) = helper(file);
+    let (mut v1, mut v2) = parse_file_columns_as_vectors(file);
     v1.sort();
     v2.sort();
 
@@ -36,7 +34,7 @@ pub fn part_1(file: &str) -> i32 {
 pub fn part_2(file: &str) -> i32 {
     let mut diff_sum: i32 = 0;
 
-    let (v1, v2) = helper(file);
+    let (v1, v2) = parse_file_columns_as_vectors(file);
 
     for i in 0..v1.len() {
         diff_sum += v1[i] * v2.iter().filter(|&n| *n == v1[i.clone()]).count() as i32;
