@@ -5,8 +5,10 @@ fn find_multipliers(text: String) -> Vec<Vec<i32>> {
     let mut multipliers = vec![];
     let re_mul = Regex::new(r"mul[(]\d+,\d+[)]").unwrap();
     let re_nums = Regex::new(r"\d+").unwrap();
+    // Find all instances of "mul(<num>,<num>)"
     re_mul.find_iter(&text).for_each(|m| {
         multipliers.push(
+            // Push each parsed i32 pair to the multipliers vector
             re_nums
                 .find_iter(m.as_str())
                 .filter_map(|digit| digit.as_str().parse::<i32>().ok())
@@ -20,7 +22,9 @@ pub fn part_1(file: &str) -> i32 {
     let mut total = 0;
 
     for line in read_lines(file).flatten() {
+        // For each line, find all instances of "mul(<num>,<num>)"
         for nums_to_multiply in find_multipliers(line) {
+            // Multiply the two numbers and add to the total
             total += nums_to_multiply[0] * nums_to_multiply[1];
         }
     }
@@ -30,22 +34,24 @@ pub fn part_1(file: &str) -> i32 {
 
 pub fn part_2(file: &str) -> i32 {
     let mut total = 0;
+    let mut vec: Vec<&str> = vec![];
 
-    for line in read_lines(file).flatten() {
-        let mut vec: Vec<&str> = vec!();
-        line.split("do()").for_each(|s| {
-            let splits: Vec<&str> = s.split("don't()").collect();
-            vec.push(splits[0]);
-        });
+    // Read the file as a single string
+    let big_string: String = read_lines(file).flatten().collect();
+    // Split the string by "do()" and "don't()" and push the first element of each split to a vector
+    big_string.split("do()").for_each(|s| {
+        let splits: Vec<&str> = s.split("don't()").collect();
+        vec.push(splits[0]);
+    });
 
-        for elem in vec {
-            println!("{:?}", elem);
-            for nums_to_multiply in find_multipliers(elem.to_string()) {
-                total += nums_to_multiply[0] * nums_to_multiply[1];
-            }
+    // For each element in the vector, find all instances of "mul(<num>,<num>)"
+    for elem in vec {
+        for nums_to_multiply in find_multipliers(elem.to_string()) {
+            // Multiply the two numbers and add to the total
+            total += nums_to_multiply[0] * nums_to_multiply[1];
         }
-        // break;
     }
+
     total
 }
 
@@ -67,9 +73,6 @@ mod tests {
     }
     #[test]
     fn part_2_input_file() {
-        assert_eq!(part_2("src/day_3/files/input.txt"), 0);
-        // 108609098 is too high
-        // 17580588 just for the first line
-        // 184122457 is the first answer
+        assert_eq!(part_2("src/day_3/files/input.txt"), 107862689);
     }
 }
