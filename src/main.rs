@@ -1,6 +1,7 @@
 mod day_1;
 mod day_2;
 mod day_3;
+mod day_4;
 mod utils;
 
 fn main() {
@@ -13,4 +14,7 @@ fn main() {
     // day 3
     println!("day3/part1: {}", day_3::part_1("src/day_3/files/input.txt"));
     println!("day3/part2: {}", day_3::part_2("src/day_3/files/input.txt"));
+    // day 4
+    println!("day4/part1: {}", day_4::part_1("src/day_4/files/input.txt"));
+    println!("day4/part2: {}", day_4::part_2("src/day_4/files/input.txt"));
 }
