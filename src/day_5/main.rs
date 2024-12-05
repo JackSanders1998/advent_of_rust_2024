@@ -1,45 +1,62 @@
 use crate::utils::read_lines;
+use std::collections::HashMap;
 
 pub fn part_1(file: &str) -> i32 {
-    println!("part 1 in progress: {}", file);
-    let mut rule_a = vec![];
-    let mut rule_b = vec![];
+    // Step 1: Set up the rules hashmap and pages vector
+    let mut rules: HashMap<i32, Vec<i32>> = HashMap::new();
     let mut pages = vec![];
     for line in read_lines(file).flatten() {
+        // If the line contains '|', we're in the rules section
         if line.contains("|") {
-            let rule: Vec<i32> = line.split('|').map(|s| s.parse().expect("parse error")).collect();
-                rule_a.push(rule[0]);
-                rule_b.push(rule[1]);
-        } else if line.contains(","){
+            // Parse the line into a vector of integers
+            let rule: Vec<i32> = line
+                .split('|')
+                .map(|s| s.parse().expect("parse error"))
+                .collect();
+            // Build the rules hashmap
+            if rules.contains_key(&rule[0]) {
+                // If the key already exists, append the value to the vector
+                let mut temp = rules.get(&rule[0]).unwrap().clone();
+                temp.push(rule[1]);
+                rules.insert(rule[0], temp);
+            } else {
+                rules.insert(rule[0], vec![rule[1]]);
+            }
+
+        // If the line contains ',', we're in the pages section
+        } else if line.contains(",") {
             pages.push(line);
         }
     }
 
-    for page in pages {
-        println!("=======new page========");
-        let parsed_page: Vec<i32> = page.split(',').map(|s| s.parse().expect("parse error")).collect();
-        for (i, num) in parsed_page.into_iter().enumerate() {
-            let index_a = rule_a
-                .iter()
-                .enumerate()
-                .filter_map(|(index, &r)| (r == num).then(|| index))
-                .collect::<Vec<_>>();
-            for index in index_a {
-                let index_b = rule_a.iter().position(|&r| r == num);
-            }
-            println!("{:?}", index_a);
+    // Step 2: Iterate through the pages and check if they are valid
+    let mut total = 0;
+    for raw_page in pages {
+        // Parse the page into a vector of integers
+        let page: Vec<i32> = raw_page
+            .split(',')
+            .map(|s| s.parse().expect("parse error"))
+            .collect();
 
-            // let index_a = rule_a.iter().position(|&r| r == num);
-            // let index_b = rule_b.iter().position(|&r| r == num);
-            // if index_a.is_some() && index_b.is_some(){
-            //     if index_a > index_b {
-            //         println!("{:?}, {:?}", index_a.unwrap(), index_b.unwrap());
-            //         println!("error");
-            //     }
-            // }
+        let mut is_page_valid = true;
+        'page_loop: for (i, num) in page.clone().into_iter().enumerate() {
+            if rules.contains_key(&num) {
+                for rule in rules.get(&num).unwrap() {
+                    // Check if the rule is in the page before the current number
+                    let index = page.iter().position(|&r| r == *rule);
+                    if index.is_some() && index.unwrap() < i {
+                        is_page_valid = false;
+                        break 'page_loop;
+                    }
+                }
+            }
+        }
+        // If the page is valid, add the middle page number to the total
+        if is_page_valid {
+            total += page[page.len().div_ceil(2) - 1];
         }
     }
-    0
+    total
 }
 
 pub fn part_2(file: &str) -> i32 {
@@ -53,11 +70,11 @@ mod tests {
 
     #[test]
     fn part_1_test_file() {
-        assert_eq!(part_1("src/day_5/files/test.txt"), 0);
+        assert_eq!(part_1("src/day_5/files/test.txt"), 143);
     }
     #[test]
     fn part_1_input_file() {
-        assert_eq!(part_1("src/day_5/files/input.txt"), 0);
+        assert_eq!(part_1("src/day_5/files/input.txt"), 4814);
     }
     #[test]
     fn part_2_test_file() {
