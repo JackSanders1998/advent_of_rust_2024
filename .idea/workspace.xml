@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day_5/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_5/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

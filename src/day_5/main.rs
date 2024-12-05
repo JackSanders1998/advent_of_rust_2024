@@ -33,6 +33,21 @@ pub fn parse_input(file: &str) -> (HashMap<i32, Vec<i32>>, Vec<String>) {
     (rules, pages)
 }
 
+fn is_page_valid(page: Vec<i32>, rules: &HashMap<i32, Vec<i32>>) -> bool {
+    for (i, num) in page.clone().into_iter().enumerate() {
+        if rules.contains_key(&num) {
+            for rule in rules.get(&num).unwrap() {
+                // Check if the rule is in the page before the current number
+                let index = page.iter().position(|&r| r == *rule);
+                if index.is_some() && index.unwrap() < i {
+                    return false;
+                }
+            }
+        }
+    }
+    true
+}
+
 pub fn part_1(file: &str) -> i32 {
     let (rules, pages) = parse_input(file);
     let mut total = 0;
@@ -41,53 +56,47 @@ pub fn part_1(file: &str) -> i32 {
     for raw_page in pages {
         // Parse the page into a vector of integers
         let page: Vec<i32> = parse_str_as_int_vec(raw_page, ",");
-
-        let mut is_page_valid = true;
-        'page_loop: for (i, num) in page.clone().into_iter().enumerate() {
-            if rules.contains_key(&num) {
-                for rule in rules.get(&num).unwrap() {
-                    // Check if the rule is in the page before the current number
-                    let index = page.iter().position(|&r| r == *rule);
-                    if index.is_some() && index.unwrap() < i {
-                        is_page_valid = false;
-                        break 'page_loop;
-                    }
-                }
-            }
-        }
         // If the page is valid, add the middle page number to the total
-        if is_page_valid {
+        if is_page_valid(page.clone(), &rules) {
             total += page[page.len().div_ceil(2) - 1];
         }
     }
     total
 }
 
+fn page_sorter(page: Vec<i32>, rules: &HashMap<i32, Vec<i32>>) -> Vec<i32> {
+    println!("{:?}", page);
+    for (i, num) in page.clone().into_iter().enumerate() {
+        if rules.contains_key(&num) {
+            for rule in rules.get(&num).unwrap() {
+                // Check if the rule is in the page before the current number
+                let index = page.iter().position(|&r| r == *rule);
+                if index.is_some() && index.unwrap() < i {
+                    // idk what to do here
+                    // if (i+1) < page.len() {
+                    //     page.swap(i, i+1);
+                    // }
+                    // page_sorter(page.clone(), rules);
+                }
+            }
+        }
+    }
+    page
+}
+
 pub fn part_2(file: &str) -> i32 {
     let (rules, pages) = parse_input(file);
     let total = 0;
-    let mut invalid_pages = vec![];
-    println!("{:?}", rules);
 
     // Iterate through the pages and check if they are invalid
     for raw_page in pages {
         // Parse the page into a vector of integers
         let page: Vec<i32> = parse_str_as_int_vec(raw_page, ",");
-
-        'page_loop: for (i, num) in page.clone().into_iter().enumerate() {
-            if rules.contains_key(&num) {
-                for rule in rules.get(&num).unwrap() {
-                    // Check if the rule is in the page before the current number
-                    let index = page.iter().position(|&r| r == *rule);
-                    if index.is_some() && index.unwrap() < i {
-                        invalid_pages.push(page);
-                        break 'page_loop;
-                    }
-                }
-            }
+        if !is_page_valid(page.clone(), &rules) {
+            let sorted_page = page_sorter(page, &rules);
+            println!("{:?}", sorted_page);
         }
     }
-    println!("{:?}", invalid_pages);
 
     total
 }
