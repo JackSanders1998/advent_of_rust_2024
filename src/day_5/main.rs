@@ -1,18 +1,20 @@
 use crate::utils::read_lines;
 use std::collections::HashMap;
 
-pub fn part_1(file: &str) -> i32 {
-    // Step 1: Set up the rules hashmap and pages vector
+fn parse_str_as_int_vec(s: String, pat: &str) -> Vec<i32> {
+    s.split(pat)
+        .map(|s| s.parse().expect("parse error"))
+        .collect()
+}
+
+pub fn parse_input(file: &str) -> (HashMap<i32, Vec<i32>>, Vec<String>) {
     let mut rules: HashMap<i32, Vec<i32>> = HashMap::new();
     let mut pages = vec![];
     for line in read_lines(file).flatten() {
         // If the line contains '|', we're in the rules section
         if line.contains("|") {
             // Parse the line into a vector of integers
-            let rule: Vec<i32> = line
-                .split('|')
-                .map(|s| s.parse().expect("parse error"))
-                .collect();
+            let rule: Vec<i32> = parse_str_as_int_vec(line, "|");
             // Build the rules hashmap
             if rules.contains_key(&rule[0]) {
                 // If the key already exists, append the value to the vector
@@ -28,15 +30,17 @@ pub fn part_1(file: &str) -> i32 {
             pages.push(line);
         }
     }
+    (rules, pages)
+}
 
-    // Step 2: Iterate through the pages and check if they are valid
+pub fn part_1(file: &str) -> i32 {
+    let (rules, pages) = parse_input(file);
     let mut total = 0;
+
+    // Iterate through the pages and check if they are valid
     for raw_page in pages {
         // Parse the page into a vector of integers
-        let page: Vec<i32> = raw_page
-            .split(',')
-            .map(|s| s.parse().expect("parse error"))
-            .collect();
+        let page: Vec<i32> = parse_str_as_int_vec(raw_page, ",");
 
         let mut is_page_valid = true;
         'page_loop: for (i, num) in page.clone().into_iter().enumerate() {
@@ -60,8 +64,32 @@ pub fn part_1(file: &str) -> i32 {
 }
 
 pub fn part_2(file: &str) -> i32 {
-    println!("part 2 in progress: {}", file);
-    0
+    let (rules, pages) = parse_input(file);
+    let total = 0;
+    let mut invalid_pages = vec![];
+    println!("{:?}", rules);
+
+    // Iterate through the pages and check if they are invalid
+    for raw_page in pages {
+        // Parse the page into a vector of integers
+        let page: Vec<i32> = parse_str_as_int_vec(raw_page, ",");
+
+        'page_loop: for (i, num) in page.clone().into_iter().enumerate() {
+            if rules.contains_key(&num) {
+                for rule in rules.get(&num).unwrap() {
+                    // Check if the rule is in the page before the current number
+                    let index = page.iter().position(|&r| r == *rule);
+                    if index.is_some() && index.unwrap() < i {
+                        invalid_pages.push(page);
+                        break 'page_loop;
+                    }
+                }
+            }
+        }
+    }
+    println!("{:?}", invalid_pages);
+
+    total
 }
 
 #[cfg(test)]

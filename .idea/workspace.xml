@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day_5/files/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_5/files/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day_5/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_5/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +50,7 @@
     "Cargo.Test day_4::main::tests::part_2_test_file.executor": "Run",
     "Cargo.Test day_5::main::tests::part_1_input_file.executor": "Run",
     "Cargo.Test day_5::main::tests::part_1_test_file.executor": "Run",
+    "Cargo.Test day_5::main::tests::part_2_test_file.executor": "Run",
     "Cargo.Test main.executor": "Run",
     "Cargo.Test main::tests (1).executor": "Run",
     "Cargo.Test main::tests.executor": "Run",
@@ -78,41 +78,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test day_5::main::tests::part_1_input_file">
-    <configuration name="Test day_4::main::tests::part_2_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_4::main::tests::part_2_input_file -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test day_4::main::tests::part_2_test_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_4::main::tests::part_2_test_file -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cargo.Test day_5::main::tests::part_2_test_file">
     <configuration name="Test day_5::main::tests::part_1_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_5::main::tests::part_1_input_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -147,6 +113,23 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test day_5::main::tests::part_2_test_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_5::main::tests::part_2_test_file -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test main" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_4::main" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -164,13 +147,30 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test main::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_5::main::tests" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test day_5::main::tests::part_2_test_file" />
+        <item itemvalue="Cargo.Test main::tests" />
         <item itemvalue="Cargo.Test day_5::main::tests::part_1_input_file" />
         <item itemvalue="Cargo.Test day_5::main::tests::part_1_test_file" />
         <item itemvalue="Cargo.Test main" />
-        <item itemvalue="Cargo.Test day_4::main::tests::part_2_input_file" />
-        <item itemvalue="Cargo.Test day_4::main::tests::part_2_test_file" />
       </list>
     </recent_temporary>
   </component>
