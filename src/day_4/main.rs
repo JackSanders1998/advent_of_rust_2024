@@ -44,12 +44,14 @@ fn coord_lookup(coords: Vec<(i32, i32)>, word_vec: Vec<String>, part: &str) -> b
 
 pub fn part_1(file: &str) -> i32 {
     let mut xmas_count = 0;
+    // Read file as as vector of rows
     let word_vec = read_lines(file).flatten().collect::<Vec<String>>();
+    // Loop over rows
     for (x, row) in word_vec.iter().enumerate() {
+        // Loop over columns
         for (y, letter) in row.chars().enumerate() {
             if letter == 'X' {
-                let coords = coords_to_check(x as i32, y as i32);
-                for coord in coords {
+                for coord in coords_to_check(x as i32, y as i32) {
                     if coord_lookup(coord.clone(), word_vec.clone(), "part_1") {
                         xmas_count += 1;
                     }
@@ -62,23 +64,27 @@ pub fn part_1(file: &str) -> i32 {
 
 pub fn part_2(file: &str) -> i32 {
     let mut xmas_count = 0;
+    // Read file as as vector of rows
     let word_vec = read_lines(file).flatten().collect::<Vec<String>>();
+    // Loop over rows
     for (x, row) in word_vec.iter().enumerate() {
+        // Loop over columns
         for (y, letter) in row.chars().enumerate() {
             if letter == 'A' {
+                // cast indexes as ints
                 let x = x as i32;
                 let y = y as i32;
-                let coords: Vec<Vec<(i32, i32)>> = vec![
+                let mut mas_count = 0;
+                for coord in vec![
                     vec![(x - 1, y - 1), (x, y), (x + 1, y + 1)],
                     vec![(x + 1, y - 1), (x, y), (x - 1, y + 1)],
-                ];
-                let mut count = 0;
-                for coord in coords {
+                ] {
                     if coord_lookup(coord.clone(), word_vec.clone(), "part_2") {
-                        count += 1;
+                        mas_count += 1;
                     }
                 }
-                if count == 2 {
+                // Increment xmas_count if we find both mas's
+                if mas_count == 2 {
                     xmas_count += 1;
                 }
             }
