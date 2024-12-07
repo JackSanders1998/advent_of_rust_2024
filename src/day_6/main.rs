@@ -51,6 +51,9 @@ fn setup_map(map: Vec<String>) -> (((i32, i32), char), Vec<(i32, i32)>) {
 pub fn part_1(file: &str) -> i32 {
     let mut total = 1;
     let map = read_lines(file).flatten().collect::<Vec<String>>();
+    for row in map.iter() {
+        println!("{}", row);
+    }
     let (mut guard, obstacles) = setup_map(map.clone());
 
     while guard.0 .0 >= 0
@@ -58,6 +61,7 @@ pub fn part_1(file: &str) -> i32 {
         && guard.0 .1 >= 0
         && guard.0 .1 < map[0].len() as i32
     {
+        println!("{:?}", guard);
         let guard_status = get_next_step(guard, obstacles.clone());
         guard = guard_status.0;
         if guard_status.1 {

@@ -8,12 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day_6/files/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_6/files/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_6/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_6/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day_6/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_6/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +81,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test day_6::main::tests::part_1_test_file">
+  <component name="RunManager" selected="Cargo.Test day_6::main::tests::part_1_input_file">
     <configuration name="Test day_5::main::tests::part_1_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_5::main::tests::part_1_input_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -173,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Test day_6::main::tests::part_1_test_file" />
         <item itemvalue="Cargo.Test day_6::main::tests::part_1_input_file" />
+        <item itemvalue="Cargo.Test day_6::main::tests::part_1_test_file" />
         <item itemvalue="Cargo.Test day_5::main::tests::part_2_test_file" />
         <item itemvalue="Cargo.Test main::tests" />
         <item itemvalue="Cargo.Test day_5::main::tests::part_1_input_file" />
@@ -208,7 +204,7 @@
       <workItem from="1733256283758" duration="1083000" />
       <workItem from="1733261728744" duration="1138000" />
       <workItem from="1733329623659" duration="7218000" />
-      <workItem from="1733504819726" duration="9328000" />
+      <workItem from="1733504819726" duration="9513000" />
     </task>
     <servers />
   </component>
