@@ -48,6 +48,20 @@ fn is_page_valid(page: Vec<i32>, rules: &HashMap<i32, Vec<i32>>) -> bool {
     true
 }
 
+fn insertion_sort(page: Vec<i32>, rules: HashMap<i32, Vec<i32>>) -> Vec<i32> {
+    let mut page = page;
+
+    for i in 1..page.len() {
+        for j in (1..i + 1).rev() {
+            if rules.contains_key(&page[j]) && rules.get(&page[j]).unwrap().contains(&page[j - 1]) {
+                page.swap(j - 1, j)
+            }
+        }
+    }
+
+    page
+}
+
 pub fn part_1(file: &str) -> i32 {
     let (rules, pages) = parse_input(file);
     let mut total = 0;
@@ -61,40 +75,22 @@ pub fn part_1(file: &str) -> i32 {
             total += page[page.len().div_ceil(2) - 1];
         }
     }
-    total
-}
 
-fn page_sorter(page: Vec<i32>, rules: &HashMap<i32, Vec<i32>>) -> Vec<i32> {
-    println!("{:?}", page);
-    for (i, num) in page.clone().into_iter().enumerate() {
-        if rules.contains_key(&num) {
-            for rule in rules.get(&num).unwrap() {
-                // Check if the rule is in the page before the current number
-                let index = page.iter().position(|&r| r == *rule);
-                if index.is_some() && index.unwrap() < i {
-                    // idk what to do here
-                    // if (i+1) < page.len() {
-                    //     page.swap(i, i+1);
-                    // }
-                    // page_sorter(page.clone(), rules);
-                }
-            }
-        }
-    }
-    page
+    total
 }
 
 pub fn part_2(file: &str) -> i32 {
     let (rules, pages) = parse_input(file);
-    let total = 0;
+    let mut total = 0;
 
     // Iterate through the pages and check if they are invalid
     for raw_page in pages {
         // Parse the page into a vector of integers
         let page: Vec<i32> = parse_str_as_int_vec(raw_page, ",");
+        // if the page is not valid, sort it  by the provided rules and add the middle num to the total
         if !is_page_valid(page.clone(), &rules) {
-            let sorted_page = page_sorter(page, &rules);
-            println!("{:?}", sorted_page);
+            let sorted_page = insertion_sort(page, rules.clone());
+            total += sorted_page[sorted_page.len().div_ceil(2) - 1];
         }
     }
 
@@ -115,10 +111,10 @@ mod tests {
     }
     #[test]
     fn part_2_test_file() {
-        assert_eq!(part_2("src/day_5/files/test.txt"), 0);
+        assert_eq!(part_2("src/day_5/files/test.txt"), 123);
     }
     #[test]
     fn part_2_input_file() {
-        assert_eq!(part_2("src/day_5/files/input.txt"), 0);
+        assert_eq!(part_2("src/day_5/files/input.txt"), 5448);
     }
 }
