@@ -1,10 +1,7 @@
 use crate::utils::read_lines;
 use std::collections::HashSet;
 
-fn get_next_step(
-    guard: ((i32, i32), char),
-    obstacles: Vec<(i32, i32)>,
-) -> ((i32, i32), char) {
+fn get_next_step(guard: ((i32, i32), char), obstacles: Vec<(i32, i32)>) -> ((i32, i32), char) {
     let mut next_guard = guard;
 
     match guard.1 {
@@ -81,7 +78,7 @@ mod tests {
     }
     #[test]
     fn part_2_test_file() {
-        assert_eq!(part_2("src/day_6/files/test.txt"), 0);
+        assert_eq!(part_2("src/day_6/files/test.txt"), 6);
     }
     #[test]
     fn part_2_input_file() {

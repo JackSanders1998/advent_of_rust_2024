@@ -8,16 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day_7/files/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_7/files/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_7/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_7/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_8/files/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_8/files/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_8/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_8/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_9/files/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_9/files/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_9/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_9/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day_6/files/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_6/files/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day_6/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_6/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -91,7 +86,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test day_6::main::tests::part_1_input_file">
+  <component name="RunManager" selected="Cargo.Test day_7::main::tests::part_1_test_file">
     <configuration name="Test day_6::main::tests::part_1_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_6::main::tests::part_1_input_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -179,9 +174,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test day_7::main::tests::part_1_test_file" />
         <item itemvalue="Cargo.Test day_6::main::tests::part_1_input_file" />
         <item itemvalue="Cargo.Test day_6::main::tests::part_1_test_file" />
-        <item itemvalue="Cargo.Test day_7::main::tests::part_1_test_file" />
         <item itemvalue="Cargo.Test main::tests (1)" />
         <item itemvalue="Cargo.Test main::tests" />
       </list>

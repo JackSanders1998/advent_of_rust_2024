@@ -8,6 +8,7 @@ mod day_5;
 mod day_6;
 mod day_7;
 mod day_8;
+mod day_9;
 mod utils;
 
 fn main() {
@@ -30,9 +31,12 @@ fn main() {
     println!("day6/part1: {}", day_6::part_1("src/day_6/files/input.txt"));
     println!("day6/part2: {}", day_6::part_2("src/day_6/files/input.txt"));
     // day 7
-    println!("day7/part1: {}", day_6::part_1("src/day_7/files/input.txt"));
-    println!("day7/part2: {}", day_6::part_2("src/day_7/files/input.txt"));
+    println!("day7/part1: {}", day_7::part_1("src/day_7/files/input.txt"));
+    println!("day7/part2: {}", day_7::part_2("src/day_7/files/input.txt"));
     // day 8
-    println!("day8/part1: {}", day_6::part_1("src/day_8/files/input.txt"));
-    println!("day8/part2: {}", day_6::part_2("src/day_8/files/input.txt"));
+    println!("day8/part1: {}", day_8::part_1("src/day_8/files/input.txt"));
+    println!("day8/part2: {}", day_8::part_2("src/day_8/files/input.txt"));
+    // day 9
+    println!("day9/part1: {}", day_9::part_1("src/day_9/files/input.txt"));
+    println!("day9/part2: {}", day_9::part_2("src/day_9/files/input.txt"));
 }
