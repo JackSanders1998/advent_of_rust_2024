@@ -8,12 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71f0b9d5-f910-43d1-be54-8cfc172d46c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/day_9/files/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_9/files/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_9/main.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day_9/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_10/files/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_10/files/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_10/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day_10/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day_6/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/day_6/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/jack/dev/advent_of_rust_2024/src",
+    "last_opened_file_path": "/Users/jack.sanders/dev/advent_of_rust_2024/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +89,7 @@
     <configuration name="Test day_6::main::tests::part_1_input_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_6::main::tests::part_1_input_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -97,7 +97,6 @@
       <option name="withSudo" value="false" />
       <option name="buildTarget" value="REMOTE" />
       <option name="backtrace" value="SHORT" />
-      <envs />
       <option name="isRedirectInput" value="false" />
       <option name="redirectInputPath" value="" />
       <method v="2">
@@ -107,6 +106,7 @@
     <configuration name="Test day_6::main::tests::part_1_test_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_6::main::tests::part_1_test_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -114,7 +114,6 @@
       <option name="withSudo" value="false" />
       <option name="buildTarget" value="REMOTE" />
       <option name="backtrace" value="SHORT" />
-      <envs />
       <option name="isRedirectInput" value="false" />
       <option name="redirectInputPath" value="" />
       <method v="2">
@@ -124,6 +123,7 @@
     <configuration name="Test day_7::main::tests::part_1_test_file" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_7::main::tests::part_1_test_file -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -131,7 +131,6 @@
       <option name="withSudo" value="false" />
       <option name="buildTarget" value="REMOTE" />
       <option name="backtrace" value="SHORT" />
-      <envs />
       <option name="isRedirectInput" value="false" />
       <option name="redirectInputPath" value="" />
       <method v="2">
@@ -141,6 +140,7 @@
     <configuration name="Test main::tests (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_6::main::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -148,7 +148,6 @@
       <option name="withSudo" value="false" />
       <option name="buildTarget" value="REMOTE" />
       <option name="backtrace" value="SHORT" />
-      <envs />
       <option name="isRedirectInput" value="false" />
       <option name="redirectInputPath" value="" />
       <method v="2">
@@ -158,6 +157,7 @@
     <configuration name="Test main::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package advent_of_rust_2024 --bin advent_of_rust_2024 day_5::main::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -165,7 +165,6 @@
       <option name="withSudo" value="false" />
       <option name="buildTarget" value="REMOTE" />
       <option name="backtrace" value="SHORT" />
-      <envs />
       <option name="isRedirectInput" value="false" />
       <option name="redirectInputPath" value="" />
       <method v="2">
